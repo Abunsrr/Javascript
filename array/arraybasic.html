@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+    var arr=[30,40,50,60,70]
+    var sum=0
+    document.write(arr[4]) //Accessing Array Elements:
+    document.write("<br>")
+    //Modifying Array Elements:
+    arr[4]=100;
+    document.write(arr[4])
+    document.write("<br>")
+
+     //using for loop 
+    for (let p =0 ; p<arr.length ; p++) {
+        
+        document.write("<li>" + arr[p] +"</li>")
+        sum= sum+arr[0]
+    }
+    document.write("<br>")
+    document.write("total sum"+ " "+ sum)
+
+    document.write("<br>")
+
+    var ar=[30,40,"nasar","true",70]
+
+    document.write(ar) //Accessing Array Elements:
+    
+
+
+    document.write("<br>")
+    var o = new Array();
+    o[0]=10;
+    o[1]="kali";
+    o[2]="nudb";
+ 
+    for(n=0 ; n<=2 ;n++){
+        document.write(o[n]+ " ");
+    }
+    
+
+// value get by user
+//     document.write("<br>");
+     
+//     var p = new Array();
+//    for (var get = 0; get<3 ; get++) {
+
+//     p[get]= prompt("enetr the three value:")
+    
+//     document.write(p);
+    
+//    }
+
+
+//................multidimensional array.............
+
+var ay=[
+    ["hsrry",24,"male","bcom"],
+    ["hsrry",24,"male","bcom"],
+    ["hsrry",24,"male","bcom"],
+    ["hsrry",24,"male","bcom"]
+]
+document.write("<table border='1px' cellspacing='0' >")
+ for(var a=0 ; a<ay.length ; a++){
+    document.write("<tr>");
+    for(var b=0 ; b<ay.length;b++){
+    document.write(  "<td>" +ay[a][b]+ " </td>");
+ }
+ document.write("</tr>")
+ }
+
+ document.write("</table>")
+
+
+    
+</script>
+<body>
+    
+</body>
+</html>
