@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num =[2,4,5,6,7,9,12,14,13];
+        let even= num.filter(num =>  num % 2 ===0);
+        document.write(even + "<br><br>");
+
+        let ages =[2,4,5,62,7,9,18,17,25,36,13];
+        function checkadult(age) {
+            return age >=18
+        }
+        let b= ages.filter(checkadult);
+        document.write(b + "<br><br>");
+
+        let number =[2,4,5,15,7,9,17,12,14,13];
+       function checkodd(odd) {
+        return odd % 2 !=0 &&  odd % 3 === 0;
+       }
+       let oddnum=number.filter(checkodd)
+        document.write(oddnum + "<br><br>");
+        
+
+    </script>
+    
+</body>
+</html>
