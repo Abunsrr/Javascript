@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    const a={
+        fname:"nasar",
+        lname:"alam",
+        age:25,
+        gmail:"nsrr.alam@gmail.com",
+        salary:function () {
+      return 25000;  
+    },
+     fullname: function(){
+        return this.fname+ " " +this.lname;
+     }
+    }
+    console.log(a)
+    document.write(a.fullname())
+    
+    document.write("<br>")
+const person=new Object()
+person.firstname="Alam"
+person.age=32
+console.log(person)
+    document.write(person.firstname)
+
+   </script> 
+</body>
+</html>

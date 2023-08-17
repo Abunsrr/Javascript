@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    const people = [
+    { firstName: "John", lastName: "Doe", age: 30 },
+    { firstName: "Alice", lastName: "Johnson", age: 25 },
+    { firstName: "Bob", lastName: "Smith", age: 40 }
+  ];
+  console.log(people)
+  people.forEach(function(person) {
+    
+       document.write(person.firstName ,
+        person.lastName 
+        ,person.age +"<br>") 
+    })
+
+    const details = [
+    { firstName: "John", lastName: "Doe", age: 30 },
+    { firstName: "Alice", lastName: "Johnson", age: 25 },
+    { firstName: "Bob", lastName: "Smith", age: 40 }
+  ];
+
+  details.forEach(function (person) {
+    const prop= Object.keys(person);
+    const value= prop.map(prop => person[prop]);
+    document.write(value + "<br>");
+  });
+
+  document.write("<br>");
+
+  const empDetails = [
+    { firstName: "John", lastName: "Doe", age: 30 },
+    { firstName: "Alice", lastName: "Johnson", age: 25 },
+    { firstName: "Bob", lastName: "Smith", age: 40 }
+  ];
+
+ for(let a=0; a<=empDetails.length ; a++){
+    document.write( empDetails[a].firstName +"<br>");
+
+ }
+
+
+
+
+// const details = [
+//   { firstName: "John", lastName: "Doe", age: 30 },
+//   { firstName: "Alice", lastName: "Johnson", age: 25 },
+//   { firstName: "Bob", lastName: "Smith", age: 40 }
+// ];
+
+// details.forEach(function (details) {
+//   const prop= Object.keys(details);
+//   const value= prop.map(prop => details[prop]);
+//   document.write(value.join(", ") + "<br>");
+// });
+
+
+
+</script>
+<body>
+    
+</body>
+</html>
