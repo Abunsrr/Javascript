@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    const string="Javascript is a great is Language "
+    const a = string.length;
+    document.write(a)
+
+////tolowercase and uppercase
+document.write("<br>")
+const b = string.toLowerCase();
+    document.write(b)
+
+    document.write("<br>")
+//includes to find string
+let c= string.includes("great")
+document.write(c)
+
+document.write("<br>")
+ ///startswith and endwith
+
+var s=string.startsWith("java")
+
+document.write(s)
+document.write("<br>")
+
+
+//search it return position
+var search=string.search("is")
+document.write(search)
+document.write("<br>")
+//match it return position
+var m=string.match(/is/g)
+document.write(m)
+
+document.write("<br>")
+
+//indexof it return first index after that it will not check
+//same as search
+var i=string.indexOf("is")
+document.write(i)
+ document.write("<br>")
+ var l=string.lastIndexOf("g")
+document.write(l)
+
+document.write("<br>")
+// replace
+
+var r = string.replace("Javascript","php")
+var re =string.replace(/is/g , "are")
+document.write(r)
+document.write("<br>")
+
+document.write(re)
+
+
+document.write("<br>")
+
+//trim it rmove space
+//mainly use in form if user give some space 
+
+const str="english is             a great     is Language "
+var trim= str.trim()
+document.write(trim)
+document.write("<br>")
+
+
+
+
+
+
+
+
+</script>
+
+<body>
+    
+<!-- 
+output
+34
+javascript is a great is language
+true
+false
+11
+is,is
+11
+31
+php is a great is Language
+Javascript are a great are Language
+english is a great is Language -->
+
+
+
+
+</body>
+</html>
