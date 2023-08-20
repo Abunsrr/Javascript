@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',  sans-serif;
+    text-decoration: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+:root{
+/*   --bg-color:#1f242d; */
+  --bg-color:#192e54;
+  --second-bg-color:#373c46;
+  --text-color:#fff;
+  --main-color:#0ef;
+  --back-gr: linear-gradient(rgba(9, 5, 54, 0.3), rgba(9, 5, 54, 0.3));
+
+}
+body{
+    background: #40434a;
+}
+.container{
+    padding-left: 100px;
+    padding-right: 100px;
+    
+}
+#yaha{
+    background-color: red;
+    padding: 20px;
+}
+
+ .menu {
+background-color: #192e54;
+padding: 10px;
+}
+
+.menu ul li{
+    display: inline;
+    font-size: 20px;
+    margin-right: 10px;
+    transition: .3 ;
+}
+.menu ul li:hover{
+    color: beige;
+}
+.content{
+    display: flex;
+flex-direction: row;
+
+}
+
+.left {
+    background-color: rgb(225, 222, 222);
+}
+
+
+.left h2,p,img{
+ padding: 10px;
+}
+
+.left img{
+    height: 150px;
+    width: 200px;
+}
+
+
+
+#list{
+    margin-left: 50px;
+}
+
+
+.right{
+    background-color:rgb(175, 182, 189) ;
+    height: 78vh;
+padding-left: 30px;
+padding-top: 10px;
+width:50rem
+   
+}
+
+.right ul li{
+margin-top: 5px;
+}
+
+.right ul li:hover{
+color: #192e54;
+    }
+
+.footer{
+   background: rgb(47, 176, 176); 
+}
+
+
+
+
+
