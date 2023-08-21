@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
   <link rel="stylesheet" href="style.css">
-<script src="dom.js"></script>
+
 </head>
 <body>
 
      <div class="container">
      <div class="heading">
-     <div id="yaha">
+     <div id="yaha"  style="border: 1px solid blueviolet;">
         <h1>Yahoo Baba</h1>
      </div>
      <div class="menu">
@@ -23,11 +23,13 @@
         </ul>
      </div>
      </div>
-  <section class="content">
-    <div class="left">
+  <section class="content"  >
+    <div class="left" id="left" onclick="xyz" style="border: 1px solid black;">
         <h2>Sub Heading</h2>
         <img src="download.jpg" alt="">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+        <p id="para" class="lorem">
+             <h1>dth hnfh ghhmh</h1>
+            Lorem ipsum dolor sit amet, consectetur adipisicing
              elit. Consectetur amet exercitationem ut quis quos, 
              sint laboriosam odit molestias. Voluptas quisquam 
              sed dicta ea architecto modi quaerat distinctio iste
@@ -35,7 +37,7 @@
                recusandae. Ullam excepturi vero corporis aliquid 
                officia omnis, est animi fuga saepe magnam maxime.
         voluptatum quas et reiciendis nisi corrupti obcaecati!</p>
-     <div id="list">
+     <div id="list" class="list">
         <ul>
             <li>Lorem ipsum dolor sit amet.</li>
             <li>iskcdo jdnckd kcd</li>
@@ -46,7 +48,7 @@
     </div>
     
     </div>
-    <div class="right">
+    <div class="right list" id="right" >
         <ul>
             <li>Home</li>
             <li>About us</li>
@@ -61,5 +63,9 @@
 </section>
 
      </div>
-</body>
+
+     <script src="dom.js"></script>
+     <script src="css.js "></script>
+     <script src="addeventlis.js"></script>
+    </body>
 </html>

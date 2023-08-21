@@ -30,7 +30,9 @@ body{
     background-color: red;
     padding: 20px;
 }
-
+.nasar h1{
+    color: rgb(221, 255, 0);
+}
  .menu {
 background-color: #192e54;
 padding: 10px;
@@ -40,7 +42,7 @@ padding: 10px;
     display: inline;
     font-size: 20px;
     margin-right: 10px;
-    transition: .3 ;
+    transition: .3s ;
 }
 .menu ul li:hover{
     color: beige;
@@ -74,7 +76,7 @@ flex-direction: row;
 
 .right{
     background-color:rgb(175, 182, 189) ;
-    height: 78vh;
+    height: 100vh;
 padding-left: 30px;
 padding-top: 10px;
 width:50rem
@@ -83,10 +85,11 @@ width:50rem
 
 .right ul li{
 margin-top: 5px;
+transition: 0.3;
 }
 
 .right ul li:hover{
-color: #192e54;
+color: #f4f6f9;
     }
 
 .footer{
