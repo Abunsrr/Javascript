@@ -38,6 +38,10 @@ background-color: #192e54;
 padding: 10px;
 }
 
+.mxyz{
+    background-color: aqua;
+}
+
 .menu ul li{
     display: inline;
     font-size: 20px;
@@ -75,6 +79,7 @@ flex-direction: row;
 
 
 .right{
+    
     background-color:rgb(175, 182, 189) ;
     height: 100vh;
 padding-left: 30px;
@@ -84,14 +89,33 @@ width:50rem
 }
 
 .right ul li{
-margin-top: 5px;
+margin-top: 15px;
 transition: 0.3;
+list-style: none;
 }
 
 .right ul li:hover{
 color: #f4f6f9;
     }
 
+    .right.list .menu-icon {
+      display: block;  
+      cursor: pointer;
+    }
+    
+    .right.list .bar {
+        width: 30px;
+        height: 3px;
+        background-color: #0e0e0e;
+        margin: 6px 0;
+    }
+
+
+
+    
+
+      
+    
 .footer{
    background: rgb(47, 176, 176); 
 }

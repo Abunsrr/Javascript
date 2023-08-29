@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<ul id="list1">
+    <li>orange</li>
+    <li>apple</li>
+    <li>grapes</li>
+    <li>banana</li>
+</ul>
+
+<ul id="list2">
+    <li>carrot</li>
+    <li>reddish</li>
+</ul>
+
+    <script>
+
+var target= document.getElementById('list1').children[0]
+var copyElement= target.cloneNode(true)
+  console.log(copyElement)
+
+
+document.getElementById("list2").appendChild(copyElement)
+
+
+
+    </script>
+</body>
+</html>

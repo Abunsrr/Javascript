@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outer {
+            background-color: rgb(199, 151, 197);
+            padding: 10px;
+        }
+
+        #inner {
+            background-color: rgb(182, 188, 130);
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            /* grid-template-columns: 50px 50px 50px 50px 50px*/
+            flex-direction: row;
+        }
+
+        #inner > div {
+            background-color: rgb(232, 252, 252);
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    
+<div id="outer">
+    <h2>outer</h2>
+    <div id="inner">
+        <h2>inner</h2>
+        <div>A</div>
+        <div>B</div>
+        <div id="child-c">C</div>
+        <div>D</div>
+        <div id="child-e">E</div>
+    </div>
+</div>
+
+<!-- If you have a JavaScript file, make sure the file path is correct -->
+<script src="par-chil.js"></script>
+</body>
+</html>
