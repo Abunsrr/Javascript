@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box{
+        width: 70px;
+        height: 70px;
+        background: red;
+    }
+</style>
+<body>
+    <div id="box">
+
+    </div>
+
+
+    <script>
+        var a=0
+        var id= setInterval(anim,800)
+       function anim() {
+        a=a+10;
+    if(a==200){
+ clearInterval(id)
+    }else{
+        var target=document.getElementById("box")
+    target.style.marginLeft=a+ 'px';
+    }
+       
+    
+
+}
+
+var set = setTimeout(function box() {
+    document.getElementById("box").style.width="200px"
+},4000)
+
+var button= '<button id="xyz" onclick="stopani()" >stop animation</button>'
+var x=document.getElementById("box").insertAdjacentHTML("afterend" ,button)
+document.getElementById("xyz").classList.add("myClass");
+  
+// function stopani() {
+//     clearTimeout(set)
+// }
+
+
+
+document.getElementById("xyz").addEventListener("click",function() {
+    clearTimeout(set) 
+})
+
+
+    </script>
+</body>
+</html>
