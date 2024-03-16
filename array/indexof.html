@@ -13,16 +13,61 @@
     
     document.write(b +"<br><br>")
 
+    document.write('indexOf("nasar", 1) method call searches for the value "nasar" starting from index 1.')
+
+
     var c = a.indexOf("abuzar")
-    
-    var c = a.indexOf("ghj")
     document.write(c +"<br><br>")
     
 //both are same
 
 </script>
+
+
+
+
 <body>
+    <p>The lastIndexOf() method in JavaScript is used to find the index of the last occurrence of a specified value (search element) within an array. It searches the array from right to left, starting from the specified index or the last element, and returns the index of the last occurrence of the specified value.</p>
 
+    <script>
+        let numbers = [1, 2, 3, 4, 5, 2, 6, 7];
+console.log(numbers.lastIndexOf(2));        // Output: 5
+console.log(numbers.lastIndexOf(2, 3));     // Output: 1
+console.log(numbers.lastIndexOf(2, 4));     // Output: 1
+console.log(numbers.lastIndexOf(2, -1));    // Output: 5
+console.log(numbers.lastIndexOf(2, -2));    // Output: 1
+console.log(numbers.lastIndexOf(2, -3));    // Output: 1
+console.log(numbers.lastIndexOf(2, -5));    // Output: -1
 
+    </script>
+<p>
+    The lastIndexOf() method in JavaScript is used to find the index of the last occurrence of a specified value (search element) within an array. It searches the array from right to left, starting from the specified index or the last element, and returns the index of the last occurrence of the specified value.
+    
+    Here's the syntax for lastIndexOf():
+    
+    javascript
+    Copy code
+    array.lastIndexOf(searchElement, fromIndex)
+    searchElement: The value to locate within the array.
+    fromIndex (Optional): The index at which to start searching backward in the array. If omitted, the search starts from the last element. If provided, it specifies the index from which to start the search backward. If the index is greater than or equal to the array's length, the entire array will be searched. If negative, it is used as the offset from the end of the array. Note that even with a negative fromIndex, the array is still searched from right to left. If the calculated index is less than 0, the entire array will be searched.
+    Here's an example of using lastIndexOf():
+    
+    javascript
+    Copy code
+    let numbers = [1, 2, 3, 4, 5, 2, 6, 7];
+    console.log(numbers.lastIndexOf(2));        // Output: 5
+    console.log(numbers.lastIndexOf(2, 3));     // Output: 1
+    console.log(numbers.lastIndexOf(2, 4));     // Output: 1
+    console.log(numbers.lastIndexOf(2, -1));    // Output: 5
+    console.log(numbers.lastIndexOf(2, -2));    // Output: 1
+    console.log(numbers.lastIndexOf(2, -3));    // Output: 1
+    console.log(numbers.lastIndexOf(2, -5));    // Output: -1
+    In this example:
+    
+    We have an array numbers containing some elements, including multiple occurrences of 2.
+    numbers.lastIndexOf(2) returns the index of the last occurrence of 2, which is 5.
+    numbers.lastIndexOf(2, 3) starts searching backward from index 3 and returns 1, the index of the first occurrence of 2 before index 3.
+    numbers.lastIndexOf(2, -1) starts searching backward from the last element and returns 5.
+    numbers.lastIndexOf(2, -2) starts searching backward from the second-to-last element and returns 1, the index of the first occurrence of 2 before the second-to-last element.</p>
 </body>
 </html>
