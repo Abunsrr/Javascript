@@ -7,26 +7,48 @@
 </head>
 
 <script>
-    var a=1;
+    var a=4;
     
     while (a<=10) {
-       document.write("<li> while loop<br>");
+        document.write("value is:",a ,"<br>");
        a=a+1;
     }
     
     document.write(" <br>")
 
-    let p=1;
+    let p=6;
     do{
-        document.write("do while loop <br>");
+        document.write("value is:",p ,"<br>");
         p++;
     } while( p <= 10);
 
     document.write(" <br>")
 
-for(let x=1; x<=10 ;x=x+1){
-    document.write("for loop <br>")
+// for(let x=1; x<=10 ;x=x+1){
+//     document.write(`${x} * ${x} =${x+1}`,)
+//     document.write(" <br>")
+//     // document.write(x +"*"+ x +"=" +x+1)
+   
+// }
+
+document.write(" <br>")
+for(let a=1; a<=10 ;a=a+1){
+    document.write(`square ${a}*${a} = ${a*a} <br>`)
+   
 }
+
+document.write(" <br>")
+for(let a=1; a<=10 ;a=a+1){
+    document.write(a," * ",a ,"=" ,(a+1) ,"<br>")
+   
+}
+
+document.write(" <br>")
+for(let a=1; a<=10 ;a=a+1){
+    document.write(a+" * "+a +"=" +(a+1) +"<br>")
+   
+}
+
 
 
 </script>

@@ -11,4 +11,9 @@ console.log("hitesh");
 //null=stand alone value i.e empty
 //undefine:which is not define yet
 //symbol=unique 
+  
+//if else 
+// switch
+
+
 
