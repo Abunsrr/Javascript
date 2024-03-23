@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    
+
+
+ 
+<script>
+   //function with return type 
+function add(val1 ,val2) {
+    let result = val1 + val2;
+    return result;
+}
+
+let res =add(10,20);
+document.write(res ,"<br>");
+
+
+// 
+// function sum(x) {
+//     let sum = 0;
+//     for (let i = 0; i < x.length; i++) {
+//         sum = sum + x[i];
+//     }
+//     return sum;
+// }
+
+// let sumArray = [1, 2, 3, 4, 5, 6];
+// let arrayResult = sum(sumArray);
+// document.write(arrayResult); 
+
+function sum(x) {
+    let sum = 0;
+   for(let num of x){
+   sum = sum +num;
+   }
+    return sum;
+}
+
+let sumArray = [1, 2, 3, 4, 5, 6];
+let arrayResult = sum(sumArray);
+document.write(arrayResult,"<br>"); 
+
+
+
+
+function value() {
+    let sum = 0;
+    for(let x of arguments) {
+        sum = sum + x;
+    }
+    return sum;
+}
+
+let allSum = value(10, 12, 39, 34, 35);
+document.write(allSum);
+
+</script>
+</body>
+</html> 
