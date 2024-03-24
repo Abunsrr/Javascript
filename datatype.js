@@ -3,9 +3,7 @@
 
 // alert( 3 + 3) // we are using nodejs, not browser
 
-console.log(3 
-    +
-     3) // code readability should be high
+console.log(3+  3) // code readability should be high
 
 console.log("Hitesh")
 
@@ -17,7 +15,7 @@ let state;
 
 
 //......premittive data type......//
-// number => 2 to power53
+// number => 2 to power 53
 //bigint for big number
 //string=""
 //boolean=>true false
@@ -31,5 +29,12 @@ let state;
 
 // object
 
-console.log(typeof undefined); // undefined
-console.log(typeof null); // object
+// console.log(typeof undefined); // undefined
+// console.log(typeof null); // object
+
+
+const id= Symbol('123')
+console.log(id);
+const idn= Symbol('123')
+console.log(idn);
+console.log(id===idn);

@@ -9,36 +9,30 @@
 <script>
     const string="Javascript is a great is Language "
     const a = string.length;
-    document.write(a)
+    console.log(a);
 
 ////tolowercase and uppercase
-document.write("<br>")
-const b = string.toLowerCase();
-    document.write(b)
 
-    document.write("<br>")
+const b = string.toLowerCase();
+console.log(b);
+
+   
 //includes to find string
 let c= string.includes("great")
-document.write(c)
-
-document.write("<br>")
+console.log(c);
  ///startswith and endwith
 
 var s=string.startsWith("java")
 
-document.write(s)
-document.write("<br>")
+console.log(s);
 
 
 //search it return position
 var search=string.search("is")
-document.write(search)
-document.write("<br>")
+console.log(search);
 //match it return position
 var m=string.match(/is/g)
-document.write(m)
-
-document.write("<br>")
+console.log(m);
 
 //indexof it return first index after that it will not check
 //same as search
@@ -53,13 +47,9 @@ document.write("<br>")
 
 var r = string.replace("Javascript","php")
 var re =string.replace(/is/g , "are")
-document.write(r)
-document.write("<br>")
+console.log(r);
+console.log(re);
 
-document.write(re)
-
-
-document.write("<br>")
 
 //trim it rmove space
 //mainly use in form if user give some space 
