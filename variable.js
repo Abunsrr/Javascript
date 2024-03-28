@@ -24,14 +24,6 @@ console.table([accountId, accountEmail, accountPassword, accountCity, accountSta
 
 
 
-
-
-
-
-
-
-
-
 // Value and data
  
 let firstName='nasar'
