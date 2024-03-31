@@ -1,16 +1,12 @@
-// for (let i = 1; i <= 10; i++) {
-//    console.log(`outer loop is ${i}`);
-//    for (let j = 1; j <= 10; j++) {
-//       console.log(`${i} * ${j} = ${i*j}`);
-//    }
-   
-// }/
+const myNums=[1,2,3]
 
-let i=6
-if(i=6){
-   console.log(`outer loop is ${i}`);
-   for (let j = 1; j <= 10; j++) {
-      console.log(`${i} * ${j} = ${i*j}`);
-   }
+// const mytotal= myNums.reduce(function(acc , cur ) {
    
-}
+//    console.log(`acc: ${acc} and cur: ${cur}`)
+//    return acc + cur},0)
+// console.log(mytotal);
+
+const mytotal= myNums.reduce( 
+   (acc ,cur) => acc+cur,0
+)
+console.log(mytotal);
