@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add and remove class</title>
+</head>
+<style>
+    .classremove{
+        background-color: aquamarine;
+    }
+</style>
+<body> 
+    <h1 class="classremove">hello javascript</h1>
+    <ul>
+
+    </ul>
+
+    <button class="btn"  id="btn" onclick="bott()">submit</button>
+<!-- insert element dynamic on screen -->
+    <script>
+        const List=`
+        <li>book </li>
+       <li>Copy</li>
+        <li>Pen</li>
+        `;
+
+        const SelectUl= document.querySelector("ul")
+        SelectUl.innerHTML = List ;
+
+        // user want to cretae complete element
+
+        let title =  document.createElement("h2")
+        title.className= "title";
+        title.style.cssText="font-size:25px; color:green;"
+        title.textContent="How to add complete element"
+        // title.classList.remove("title");
+          document.body.appendChild(title)
+
+       
+        //  remove classfrom h1
+
+        let remove=document.querySelector("h1.classremove")
+        remove.classList.remove("classremove")
+
+        // 2nd method
+       
+        let remh2=document.querySelector('h2.title')
+        if (remh2) {
+    remh2.classList.remove("title");
+}
+
+// create element using for loop
+for (let i = 0; i < 3; i++) {
+ let para=  document.createElement("p")
+ para.classList="fsjds";
+para.textContent=i;
+document.body.appendChild(para)
+
+    
+}
+
+// button on click
+function bott() {
+  let value=  prompt("solve this 50-20");
+    if (value==30) {
+        document.getElementById("btn").innerText="suceess" 
+        document.querySelector(".btn").style="color:blue;"
+    }else{
+    document.getElementById("btn").innerText="not suceess"
+    document.querySelector(".btn").style="color:red;"
+    }
+}
+    </script>
+</body>
+
+</html>
