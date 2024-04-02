@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listner</title>
+</head>
+<body>
+    <h2>Learning Eevnt Listner </h2>
+    <p id="para">Event Listner</p>
+
+    <script>
+        // document.addEventListener("Event" , Whom should I Call maninly function)
+        document.addEventListener("click",Hello)
+        function Hello() {
+            document.getElementById("para").innerHTML="mouse click"
+        }
+    </script>
+
+<div id="myElement"></div>
+
+<script>
+document.getElementById("myElement").innerHTML = "<em>Important Message!</em>";
+document.getElementById("myElement").innerText = "<em>Important Message!</em>";
+</script>
+
+ <h4 id="mous"></h4>
+<script>
+    document.addEventListener("mouseenter", mouse)
+    function mouse() {
+     let  event= document.getElementById("mous")
+     event.innerText="hello mouse enter"
+
+    }
+
+    
+    // function mouseleave() {
+    //     document.getElementById("mous")
+    //     document.addEventListener("mouseleave", mouseleave).style="color:blue;"  
+    // }
+    
+   
+
+
+</script>
+
+</body>
+</html>
