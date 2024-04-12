@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+
+</head>
+<body>
+  <h1>Map</h1>
+  <p>In map, a new array is created and returned with the transformed values. The original array remains unchanged, and the transformed values are stored in the new array. This ensures that the original array is not mutated, which can be beneficial for maintaining data integrity and avoiding unexpected side effects.</p>
+
+  <pre>
+    <code>
+      // Custom map function
+function myMap(arr, callback) {
+  // Create an empty array to store the transformed values
+  const mappedArray = [];
+  
+  // Iterate over the input array
+  for (let i = 0; i< arr.length; i++) {
+    // Apply the callback function to each element and push the result to the new array
+    mappedArray.push(callback(arr[i], i, arr));
+  }
+  
+  // Return the new array with transformed values
+  return mappedArray;
+}
+
+// Example usage of custom map function
+const numbers = [1, 2, 3, 4, 5];
+
+// Using custom map function to double each element
+const doubledNumbers = myMap(numbers, num => num * 2);
+console.log(doubledNumbers); // Output: [2, 4, 6, 8, 10]
+
+    </code>
+  </pre>
+
+  <ul>
+    <li>arr is the input array.</li>
+    <li>callback is the function that will be applied to each element of the array.</li>
+    <li>Inside the function, we iterate over the input array using a loop, apply the callback function to each element, and push the result to a new array.</li>
+    <li>Finally, we return the new array containing the transformed values.</li>
+  </ul>
+
+  <p>This custom map function behaves similarly to the built-in map function in JavaScript. It demonstrates the basic logic behind how higher-order functions like map can be implemented from scratch. You can further customize it or add additional features based on your requirements.</p>
+
+  <H2>For each v/s Map</H2>
+
+  <h2>forEach:</h2>
+<ul>
+  <li>
+    <strong>Purpose:</strong> Iterates over the array and applies a function to each element but doesn't return a new array. It's mainly used for its side effects, such as logging elements or modifying the original array in place.
+  </li>
+  <li>
+    <strong>Usage:</strong> Used when you want to perform an action or operation for each element of an array, such as logging each element or updating external state.
+  </li>
+</ul>
+
+<h2>map:</h2>
+<ul>
+  <li>
+    <strong>Purpose:</strong> Iterates over the array, applies a function to each element, and returns a new array containing the results of applying the function to each element. It's specifically designed for transforming elements of an array without mutating the original array.
+  </li>
+  <li>
+    <strong>Usage:</strong> Used when you want to transform each element of an array into a new value based on a specified transformation function.
+  </li>
+</ul>
+<p> while both forEach and map iterate over an array and apply a function to each element, forEach is primarily used for its side effects, while map is used for transforming elements and returning a new array with the transformed values.</p>
+
+
+ <h1>Filter</h1>
+
+ <pre><code>function myFilter(arr, callback) {
+  const filteredArray = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i], i, arr)) {
+      filteredArray.push(arr[i]);
+    }
+  }
+
+  return filteredArray;
+}
+
+// Example usage of custom myFilter function with arrow function
+const numbers = [1, 2, 3, 4, 5];
+
+// Using custom myFilter function to select even numbers with arrow function
+const evenNumbers = myFilter(numbers, (num, index, arr) => num % 2 === 0);
+
+console.log(evenNumbers); // Output: [2, 4]
+</code></pre>
+
+ <h1>Explanation of myFilter Function</h1>
+  
+  <h2>Callback Function:</h2>
+  <ul>
+    <li>
+      The callback function <code>(num, index, arr) => num % 2 === 0</code> is an arrow function that checks if each number is even (<code>num % 2 === 0</code>).
+    </li>
+    <li>
+      It's passed directly as the second argument to the <code>myFilter</code> function.
+    </li>
+    <li>
+      This arrow function takes three parameters: <code>num</code> (the current element), <code>index</code> (the index of the current element), and <code>arr</code> (the original array).
+    </li>
+  </ul>
+  
+  <h2>myFilter Function:</h2>
+  <ul>
+    <li>
+      The <code>myFilter</code> function iterates over each element of the <code>numbers</code> array.
+    </li>
+    <li>
+      It applies the arrow function to each element to determine if it should be included in the filtered array.
+    </li>
+  </ul>
+  
+  <h2>Result:</h2>
+  <ul>
+    <li>
+      The resulting <code>evenNumbers</code> array contains only the even numbers from the original <code>numbers</code> array.
+    </li>
+  </ul>
+
+  <h1>Find()</h1>
+  <p>find: Finds the first element in an array that satisfies a provided testing function. Returns undefined if no such element is found.</p>
+  <pre><code>const numbers = [1, 2, 3, 4, 5];
+    const firstEvenNumber = numbers.find(num => num % 2 === 0);
+    console.log(firstEvenNumber); // Output: 2
+    </code></pre>
+
+    <h1>Reduce()</h1>
+    <p>Executes a reducer function (that you provide) on each element of the array, resulting in a single output value.</p>
+    <pre><code>const numbers = [1, 2, 3, 4, 5];
+      const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+      console.log(sum); // Output: 15
+      
+      </code></pre>
+
+      <h1>Every()</h1>
+    <p>Checks if all elements in the array pass the test implemented by the provided function. Returns true if all elements satisfy the condition, otherwise false.</p>
+    <pre><code>const numbers = [1, 2, 3, 4, 5];
+      const allPositiveNumbers = numbers.every(num => num > 0);
+      console.log(allPositiveNumbers); // Output: true
+      
+      
+      </code></pre>
+
+
+      <h1>Some()</h1>
+    <p>Checks if at least one element in the array passes the test implemented by the provided function. Returns true if any element satisfies the condition, otherwise false.</p>
+    <pre><code>const numbers = [1, 2, 3, 4, 5];
+      const hasNegativeNumber = numbers.some(num => num < 0);
+      console.log(hasNegativeNumber); // Output: false
+      
+      
+      </code></pre>
+
+
+      <h1>Sort()</h1>
+      <p> Sorts the elements of an array in place and returns the sorted array. The default sort order is ascending based on the Unicode code point values of the elements.</p>
+      <pre><code>const numbers = [3, 1, 5, 2, 4];
+        const sortedNumbers = numbers.sort((a, b) => a - b);
+        console.log(sortedNumbers); // Output: [1, 2, 3, 4, 5]
+        
+        
+        
+        </code></pre>
+
+
+        <h1>Explanation of Array Iteration Methods</h1>
+  
+  <h2>map:</h2>
+  <ul>
+    <li>
+      Use when you want to transform each element of an array into a new value based on a specified transformation function.
+    </li>
+    <li>
+      Benefits:
+      <ul>
+        <li>Creates a new array with transformed values, leaving the original array unchanged.</li>
+        <li>Concise and expressive syntax for transforming elements.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>filter:</h2>
+  <ul>
+    <li>
+      Use when you want to select a subset of elements from an array based on a specified condition.
+    </li>
+    <li>
+      Benefits:
+      <ul>
+        <li>Creates a new array containing only the elements that pass the condition, leaving the original array unchanged.</li>
+        <li>Provides a clean and readable way to filter elements based on criteria.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>reduce:</h2>
+  <ul>
+    <li>
+      Use when you want to reduce an array to a single value by performing a specified operation on each element.
+    </li>
+    <li>
+      Benefits:
+      <ul>
+        <li>Provides flexibility to perform complex calculations or aggregations on array elements.</li>
+        <li>Can be used to solve a wide range of problems, including summing numbers, calculating averages, finding maximum or minimum values, etc.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>forEach:</h2>
+  <ul>
+    <li>
+      Use when you want to iterate over each element of an array and perform a side effect, such as logging elements or modifying external state.
+    </li>
+    <li>
+      Benefits:
+      <ul>
+        <li>Executes a provided function once for each array element, allowing you to perform operations with side effects.</li>
+        <li>Simple and straightforward way to perform actions on each element without creating a new array.</li>
+      </ul>
+    </li>
+  </ul>
+
+</body>
+</html>

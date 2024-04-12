@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .circlee {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: rgb(177, 30, 30);
+            display: inline-block;
+        }
+    </style>
+</head>
+<body id="body">
+
+<script>
+
+
+    function createCircle() {
+        const circle = document.createElement('div');
+        circle.classList.add('circlee');
+        document.body.appendChild(circle);
+    }
+
+    function keyPress(event) {
+        if (/^[a-zA-Z]$/.test(event.key)) {
+           
+            createCircle();
+            
+           
+        }
+    }
+
+    document.addEventListener('keydown', keyPress);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+</style>
+<body>
+        <button id="btn">click here to change bg</button>
+
+        <script>
+         
+          
+       let color= ()=>{
+let val='0123456789ABCDEF'
+let cons= '#'
+let generatedHex=cons
+for (let i = 0; i < 6; i++) {
+     
+    let randomHex= Math.floor(Math.random()*val.length)
+
+    generatedHex = generatedHex+ val[randomHex];
+}
+           return generatedHex;
+       }
+
+        let check = ()=>{
+            document.body.style.backgroundColor=color()
+
+       
+        }
+        document.querySelector("body").addEventListener("click", check)
+
+        
+        </script>
+</body>
+</html>
