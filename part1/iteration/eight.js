@@ -1,8 +1,8 @@
 const myNums = [1, 2, 3]
 
-// const myTotal = myNums.reduce(function (acc, currval) {
-//     console.log(`acc: ${acc} and currval: ${currval}`);
-//     return acc + currval
+// const myTotal = myNums.reduce(function (acc, curentval) {
+//     console.log(`acc: ${acc} and currval: ${curentval}`);
+//     return acc + curentval
 // }, 0)
 
 const myTotal = myNums.reduce( (acc, curr) => acc+curr, 0)

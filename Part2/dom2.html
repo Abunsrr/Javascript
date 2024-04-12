@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color:#fff">
+     <ul class="language">
+        <li>javascript</li>
+     </ul>
+</body>
+<script>
+    function listName(listLang) {
+       const li= document.createElement("li")
+       li.innerHTML=`${listLang}`
+       document.querySelector('.language').appendChild(li)
+    }
+    listName("python")
+    listName("typescript")
+
+    // but there is problem in this like optimization issue like  to append list it traverse tree in the end it takes time.
+
+    //by using textNode
+
+    function addOptilist(langName) {
+        const li=document.createElement('li')
+        origin
+// const addtext= document.createTextNode('li')
+// li.appendChild(langName)
+// or do in one line which is more understandable
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".language").appendChild(li)
+    }
+
+    addOptilist("golang")
+
+    // Edit 
+   const selectLang= document.querySelector("li:nth-child(2)")
+   const newli = document.createElement('li')
+   newli.textContent="Mojo"
+//    here we did not use queryselector because reference is present 
+   selectLang.replaceWith(newli)
+   
+
+//   edit  2nd method
+const Firstlang=document.querySelector("li:nth-child(1)") 
+Firstlang.outerHTML="<li>Html</li>"
+
+//remove 
+const lastlang=document.querySelector('li:last-child')
+lastlang.remove()
+</script>
+ 
+</html>
