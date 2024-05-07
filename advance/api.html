@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+<p style="color: aliceblue;">0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.</p>
+
+</body>
+<script>
+
+
+let data;
+
+const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+     
+
+
+     const xhr = new XMLHttpRequest();
+     xhr.open('GET', requestUrl)
+ 
+     // onreadyststechange is to change the state continous 
+     xhr.onreadystatechange = function(){
+         console.log(xhr.readyState);
+         //state is changing we can aslo target state like this
+         if (xhr.readyState === 4) {
+             // JSON.parse is used to convert string to object by usinh JSON(json is object) parse convert data into json
+             const data = JSON.parse(this.responseText)
+             console.log(data)
+             // this use for this current context only
+             console.log(typeof data);
+             console.log(data.followers);
+             console.log(data.avatar_url
+ );
+ 
+
+ let div=document.createElement('button')
+ div.id= "btn"
+ 
+ div.innerText="click"
+ div.style.backgroundColor='Blue'
+ div.style.paddingInline="20px"
+ document.body.appendChild(div)
+
+//  card visibility 
+let cardVisible=false
+function toggleCard() {
+    if (cardVisible) {
+        document.querySelector('#card').remove();
+        cardVisible = false;
+    } else {
+       
+        Card();
+        cardVisible = true;
+    }
+}
+
+
+
+function Card() {
+    let cardDiv=document.createElement('div')
+ cardDiv.id= "card"
+
+ 
+ const cardStyles = {
+  backgroundColor: "white",
+  color: "black", 
+  padding: "10px",
+  boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)", 
+  borderRadius: "5px" ,
+  height:"250px",
+  width:"180px",
+  margin: "auto"
+
+};
+// console.log(Object.assign(cardDiv.style, cardStyles));
+
+Object.assign(cardDiv.style, cardStyles);
+
+// cardDiv.innerHTML='<h2>Hitesh Card</h2>'
+// importand append concept
+const cardTitle = document.createElement('h2');
+  cardTitle.textContent = "This is a card title";
+  cardDiv.appendChild(cardTitle);
+
+ 
+  let img=document.createElement('img')
+  img.src = data.avatar_url
+  img.style.height="100px"
+  cardDiv.appendChild(img);
+   
+ 
+
+
+
+  let fol=document.createElement('h4')
+  fol.textContent =`Followers: ${data.followers}`
+  cardDiv.appendChild(fol);
+
+ document.body.appendChild(cardDiv)
+}
+
+document.querySelector('#btn').addEventListener('click',toggleCard)
+    
+
+
+
+
+
+ 
+         }
+     }
+     xhr.send();
+
+
+
+   
+</script>
+</html>
