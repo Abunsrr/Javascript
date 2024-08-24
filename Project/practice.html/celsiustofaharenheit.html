@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <p>Temperature Conversion</p>
+ <script>
+   /* function fahrenheit(celsius){
+        far=(celsius*9/5) + 32;
+        console.log(`The value of Fahrenheit is ${far} `)
+        
+    }
+    fahrenheit(25)*/
+
+    function fahrenheit(celsius){
+        return celsius*9/5 + 32;
+    }
+
+    console.log(`The value of Fahrenheit is ${fahrenheit(25)} `)
+    function celsius(fahrenheit){
+        return (fahrenheit-32)* 5/9;
+    }
+    
+    console.log(`The value of Celsius is ${celsius(86)} `)
+
+// temparture 
+
+    function convertTemperature(degree, unit){
+    
+   if(unit==='C'){
+ result = fahrenheit(degree)
+   console.log(`Celcius to Fahrenheit ${result}`)
+   return `${result}F`
+    }
+    else if (unit === 'F'){
+     result = celsius(degree)
+   console.log(`Fahrenheit  to Celsius ${Math.round(result)}`)
+   return `${result}C`
+    }
+
+    }
+    convertTemperature(25,'C')
+    convertTemperature(80,'F')
+ </script>
+</body>
+</html>
