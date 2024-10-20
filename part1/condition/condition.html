@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+  <script>
+    let user= prompt("who are you?", '')
+    if(user==='Admin'){
+        let pass = prompt("password?", '')
+        if(pass==='Master'){
+          alert("welcome")
+        }else if(pass === ""|| pass === null){
+            alert('cancel')
+        }else{
+            alert('wrong pass')
+        }
+    }else if(user === ""|| user === "null"){
+ alert("cancel")
+    }else{
+        alert("I do not know you")
+    }
+  </script>
+
+
+</body>
+</html>

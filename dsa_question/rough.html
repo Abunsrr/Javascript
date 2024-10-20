@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <!-- not correct code need to correct thhis-->
+    <script>
+        // Simplified representation of the 'alert' function
+
+function alert(message) {
+  // 1. Create a modal dialog box element
+  const dialogBox = createDialogBoxElement(); 
+
+  // 2. Add the message to the dialog box
+  addMessageToDialogBox(dialogBox, message);
+
+  // 3. Add an OK button to the dialog box
+  addOkButtonToDialogBox(dialogBox);
+
+  // 4. Display the dialog box on the screen
+  showDialogBox(dialogBox);
+
+  // 5. Wait for the user to click OK (pause execution)
+  waitForOkButtonClick(dialogBox);
+
+  // 6. Close the dialog box
+  closeDialogBox(dialogBox);
+}
+
+// Helper functions (simplified)
+function createDialogBoxElement() {
+  // ... (Code to create the HTML elements for the dialog box) ...
+}
+
+function addMessageToDialogBox(dialogBox, message) {
+  // ... (Code to add the message text to the dialog box) ...
+}
+
+function addOkButtonToDialogBox(dialogBox) {
+  // ... (Code to add an OK button to the dialog box) ...
+}
+
+function showDialogBox(dialogBox) {
+  // ... (Code to display the dialog box on the screen) ...
+}
+
+function waitForOkButtonClick(dialogBox) {
+  // ... (Code to pause execution until the OK button is clicked) ...
+}
+
+function closeDialogBox(dialogBox) {
+  // ... (Code to remove the dialog box from the screen) ...
+}
+    </script>
+</body>
+</html>
