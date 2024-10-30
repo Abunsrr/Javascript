@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+   
+   //The Product constructor is defined to accept three parameters: name, price, and category.
+   // When a Product instance is created, these values are assigned to the instance.
+
+  function Product(name, price, category) {
+  this.name = name;
+  this.price = price;
+  this.category = category;
+
+}
+ 
+// The following methods are defined on the Product prototype, so they are accessible to all instances of Product and any objects inheriting from it (like Book and Laptop).
+
+//const product1= new Product('Phone', 800, "gadget")
+
+// Actual price
+Product.prototype.displayPrice = function(currency) {
+  return `${currency}${this.price.toFixed(2)}`;
+}
+
+//console.log('price:', product1.displayPrice("$") )
+
+// discount
+Product.prototype.calculateDiscount = function(discountPercentage) {
+  return this.price * (discountPercentage / 100);
+}
+//console.log('Discount:', product1.calculateDiscount("10"));
+
+// added to cart
+Product.prototype.addToCart = function(quantity) {
+  return`${quantity} x ${this.name} added to cart`;
+}
+
+// final price after discount
+Product.prototype.totalPrice = function (currency, discountPercentage) {
+  const discount = this.calculateDiscount(discountPercentage);
+  return `${currency}${(this.price - discount).toFixed(2)}`; 
+}
+// const product1 = new Product('Phone', 800, "gadget");
+
+// //for...in is the most suitable choice in this scenario because it allows you to see a complete list of all 
+// // enumerable properties (including inherited methods) of your Product objects.
+//   for (let key in product1) {
+//     console.log(`${key} :  ${product1[key]}`); 
+//   }
+
+
+//Book is created as a specific type of Product. Inside the Book constructor, Product.call(this, name, price, "Book") is used to inherit name and price from Product while setting 
+//category to "Book". author is a new property specific to Book instances.
+ 
+function Book(name , price , author) {
+  Product.call(this, name, price , "Book")
+  this.author= author;
+ }
+
+ Book.prototype = Object.create(Product.prototype)
+ Book.prototype.constructor = Book; 
+
+//  defining laptop category 
+function Laptop(name, price, brand, spec) {
+  Product.call(this, name , price , "Laptop")
+  Object.assign(this, { brand, spec });
+
+}
+Laptop.prototype= Object.create(Product.prototype)
+ 
+// Two instances, theHobbit (a Book) and macbookPro (a Laptop), demonstrate how the inheritance works.
+const theHobbit = new Book("The Hobbit", 12.99, "J.R.R. Tolkien");
+const macbookPro = new Laptop("MacBook Pro", 1999.99, "Apple", { ram: "16GB", storage: "1TB" });
+
+// 
+//Calls calculateDiscount on theHobbit, 
+//console.log(`The Hobbit discount(10%): ${theHobbit.calculateDiscount(10)}`);
+//console.log(macbookPro.displayPrice("price:" + "$" )); // Output: $1999.99
+
+// add to cart 
+macbookPro.addToCart(1); // Output: 1 x MacBook Pro added to cart
+console.log(macbookPro.totalPrice("$", 10));
+
+// console.log(`${theHobbit.name} - Discounted Price: ${theHobbit.displayPrice("$")} 
+// -> After Discount: $${theHobbit.calculateDiscount(10).toFixed(2)}`); 
+
+console.log(`       ${theHobbit.addToCart(1)}            
+             Book Name:  ${theHobbit.name}
+             Actual Price: ${theHobbit.displayPrice("$")}
+             Discount(10%): $${theHobbit.calculateDiscount(10).toFixed(2)}
+             Total Price:  ${theHobbit.totalPrice("$", 10)}
+
+`);
+
+ 
+console.log(`${macbookPro.name} - Actual Price: ${macbookPro.displayPrice("$")} 
+-> After Discount: ${macbookPro.totalPrice("$", 15)}`);
+
+    </script>
+
+  
+</body>
+</html>
