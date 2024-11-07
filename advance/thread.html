@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="compute">Compute in Worker</button>
+    <p id="output">Result will appear here.</p>
+    <script>
+        const worker = new Worker("worker.js");
+    
+        document.getElementById("compute").addEventListener("click", () => {
+            // Send a message to the worker to start computation
+            worker.postMessage("start");
+    
+            // Update DOM immediately, without waiting
+            document.getElementById("output").innerText = "Computing...";
+        });
+    
+        // Receive the result from the worker
+        worker.onmessage = (event) => {
+            // Now we can update the DOM with the result
+            document.getElementById("output").innerText = "Result: " + event.data;
+        };
+    </script>
+    
+</body>
+</html>

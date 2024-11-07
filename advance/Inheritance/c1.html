@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+
+<script>
+    function animal(){}
+    animal.prototype.home= ()=>{
+        console.log("Forest");  
+    }
+
+    
+     function Bird(){}
+
+     Bird.prototype= Object.create(animal.prototype)
+     const bird = new Bird()
+
+     bird.home()
+     
+     
+     
+</script>
+
+</body>
+</html>

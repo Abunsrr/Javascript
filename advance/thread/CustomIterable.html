@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function customIterator(arr) {
+          var index = 0 ;
+          return {
+            next : function () {
+                if (index < arr.length) {
+                    return { value: arr[index++], done: false
+
+                    }
+                } else {
+                    return {
+                        value:undefined,
+                        done:true
+                        
+                    }
+                }
+                   
+                }
+            }
+          }  
+
+        
+
+        let number= [200,400, 600]
+        let num = customIterator(number);
+        console.log(num.next());
+        console.log(num.next());
+         for(const k of num){
+         console.log(k);
+         
+         }
+        
+    </script>
+</body>
+</html>

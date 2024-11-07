@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    console.log("Start of heavy task");
+
+function blockMainThread() {
+    // Heavy synchronous computation that will block the main thread
+    const end = Date.now() + 3000; // 3 seconds
+    while (Date.now() < end) {
+        // Simulate heavy work
+    }
+    console.log("Heavy task completed");
+}
+
+blockMainThread();
+
+console.log("End of script");
+
+   </script> 
+</body>
+</html>

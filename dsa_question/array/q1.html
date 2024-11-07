@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        Write the function sumInput() that:
+
+Asks the user for values using prompt and stores the values in the array.
+Finishes asking when the user enters a non-numeric value, an empty string, or presses “Cancel”.
+Calculates and returns the sum of array items.
+P.S. A zero 0 is a valid number, please don’t stop the input on zero.
+
+Run the demo
+    </p>
+    
+
+    <script>
+
+  function sumInput() {
+    let num=[];
+    let input;
+    while (true) {
+       input = prompt("please enter the digits", 0);
+       if (input == "" || input == null || !isFinite(input)) {
+        break;
+       } 
+       num.push(+input)
+    }
+
+    let sum = 0
+    for (const element of num) {
+       sum = sum + element; 
+    }
+    return sum
+  }
+
+  alert(sumInput())
+
+    </script>
+</body>
+</html>
