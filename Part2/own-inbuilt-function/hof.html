@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    
+    <script>
+
+
+//to Implement like map use Array.prototype.mymethod = function (logic) but be careful 
+
+        // radius
+        const  radius =[3,1,2,4]
+     function mymethod(radius, logic) {
+        let output=[]
+        for (let i = 0; i < radius.length; i++) {
+            output.push(logic(radius[i]))
+        }
+        return output
+     }
+
+
+function araeCal(radius){
+   return Math.PI*radius*radius;
+}
+
+console.log(mymethod(radius,araeCal));
+ 
+
+console.log(mymethod(radius, x => 2 * (Math.PI * x)));
+
+    //  console.log("without hof and callback");
+     
+
+    //     const calculateArea= function (radius) {
+    //         let output =[]
+    //         for (const x of radius) {
+    //             output.push(Math.PI*x*x)
+    //         }
+    //         return output
+    //     }
+    //  console.log(calculateArea(radius))
+
+
+    // //  cirumference 
+    
+    //     const calculatecirmuference= function (radius) {
+    //         let output =[]
+    //         for (const x of radius) {
+    //             output.push(2*(Math.PI*x))
+    //         }
+    //         return output
+    //     }
+    //  console.log(calculatecirmuference(radius))
+
+
+    
+
+    </script>
+
+
+</body>
+</html>
