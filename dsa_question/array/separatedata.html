@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>Separate the Data </p>
+  const data = [
+  { name: "Alice", age: 20, gender: "female" },
+  { name: "Bob", age: 30, gender: "male" },
+  { name: "Charlie", age: 25, gender: "male" },
+  { name: "David", age: 22, gender: "male" },
+  { name: "Eva", age: 18, gender: "female" },
+  { name: "Frank", age: 40, gender: "male" },
+];
+
+<script>
+  //Brute Force Approach
+//This involves iterating through the array and creating separate arrays for males and females.
+const data = [
+  { name: "Alice", age: 20, gender: "female" },
+  { name: "Bob", age: 30, gender: "male" },
+  { name: "Charlie", age: 25, gender: "male" },
+  { name: "David", age: 22, gender: "male" },
+  { name: "Eva", age: 18, gender: "female" },
+  { name: "Frank", age: 40, gender: "male" },
+];
+
+
+let males =[]
+let females =[]
+for (let i = 0; i < data.length; i++) {
+  if (data[i].gender === "male") {
+    males.push(data[i]);
+  } else if (data[i].gender === "female") {
+    females.push(data[i]);
+  }
+}
+
+console.log("Males:", males);
+console.log("Females:", females);
+
+
+// now use reduce 
+
+const separtes= data.reduce((acc, cur) =>{
+if(cur.gender==="male")
+  acc.male.push(cur)
+else acc.female.push(cur)
+ return acc
+}, {
+  male : [],
+  female:[]
+})
+
+console.log("Males" ,separtes.male);
+console.log( "Females" ,separtes.female);
+
+
+
+
+</script>
+</body>
+</html>

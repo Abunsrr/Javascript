@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+        let str ='helloworld'
+    let charCount = {}; // Initially an empty object
+
+for (let char of str) {
+    if (charCount[char]) {
+        charCount[char] += 1;
+    } else {
+        charCount[char] = 1; // Assigning the value 1 here
+    }
+}
+console.log(charCount);
+
+    </script>
+</body>
+</html>
