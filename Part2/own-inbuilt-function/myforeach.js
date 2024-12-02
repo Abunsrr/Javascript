@@ -15,4 +15,3 @@ myForEach(number,(num)=> {
 
   console.log(square)
 
- 

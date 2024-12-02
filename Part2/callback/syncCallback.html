@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    
+
+
+
+    <script>
+        function processPayment(amount, callback) {
+  console.log("Processing payment...");
+  console.log("Paid $" + amount);
+  callback();
+  console.log("Payment complete.");
+}
+
+processPayment(100, function() {
+  console.log("Thank you for your payment!");
+})
+
+
+
+// Synchronous callback function to calculate the order subtotal
+function calculateSubtotal(itemPrice, runningSubtotal) {
+    return runningSubtotal + itemPrice;
+}
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

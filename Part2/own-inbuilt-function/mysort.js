@@ -1,33 +1,18 @@
-// function mysort(arr,callback) {
-//    const sortedarray=[]
-//    for (let i = 0; i < arr.length; i++) {
-//     if (callback(arr[i],i,arr)) {
-//         sortedarray.push
-//     }
-    
-//    } 
-// }
+function simpleSort(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      const a = arr[i];
+      const b = arr[j];
 
-// let number=[1,2,3,,4,5,6]
-// isko my sort bana hai 
-
- const personNames = [
-    "Alice",
-    "Grace",
-    "Hannah",
-    "Isaac",
-    "Frank",
-    "Julia",
-    "Charlie",
-    "Bob",
-    "David",
-    "Eve",
-  ];
-  
-// let arr=personNames.sort()
-// let arr=personNames.sort()
-// console.log(arr);
+      if (a > b) { // Simplified comparison for ascending order
+        // Swap a and b in the array
+        [arr[i], arr[j]] = [arr[j], arr[i]]; 
+      }
+    }
+  }
+  return arr;
+}
 
 const numbers = [3, 1, 5, 2, 4];
-const sortedNumbers = numbers.sort((a,b)=>b-a);
-console.log(sortedNumbers);
+const sortedNumbers = simpleSort(numbers);
+console.log(sortedNumbers); // Output: [1, 2, 3, 4, 5]

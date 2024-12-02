@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+      function myfun(){
+    console.log("Inside the function")
+    }
+
+    console.log("Start");
+    myfun()
+    console.log("End");
+    
+    //  // synchronous function
+    console.log("Asynchnorous example")
+
+    console.log("Start");
+    setTimeout(()=>{
+
+    console.log("Inside settimeout");
+    
+    }, 1000)
+    console.log("End");
+
+
+    // synchronous function
+    
+
+
+    function sync() {
+        console.log("Synchnorous example") 
+        console.log("Start");
+const number = [2,4,6,8,10,12,14]
+number.forEach((num)=>{
+console.log(num);
+
+});
+console.log("End")   
+    }
+ setTimeout(sync,3000)
+
+// problem
+
+
+
+
+setTimeout(() => {
+    console.log("Start and problem");
+
+function getName(name) {
+    
+console.log("start");
+setTimeout(() => {
+   console.log("inside the settimeout problem");
+    return name;
+}, 4000);
+
+}
+const nm= getName('sonam')
+ console.log(nm);
+console.log("End");
+
+}, 6000);
+
+
+
+
+ </script>
+
+</body>
+</html>

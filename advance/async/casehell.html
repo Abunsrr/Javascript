@@ -1,0 +1,126 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    // Step 1: Get Name
+
+function getName(user, callback) {
+    setTimeout(() => {
+        console.log("Fetching user name...");
+        callback(user); // Pass the user to the callback
+    }, 2000);
+}
+
+// Step 2: Get Hobbies
+function getHobbies(fetchedName, callback) {
+    setTimeout(() => {
+        console.log(`Fetching hobbies for ${fetchedName}...`);
+
+        const hobbies = {
+            Sonam: ['reading', 'watching movies', 'playing'],
+            Raj: ['coding', 'gaming', 'cooking'],
+            Maya: ['painting', 'cycling', 'yoga']
+        };
+
+        callback(hobbies[fetchedName] || []);
+    }, 1000);
+}
+
+function getFavoriteActivity(fetchedName,hobbyList,fCallabck ) {
+    // Sonam: ['reading', 'watching movies', 'playing'],
+
+    console.log(`Fetching favorite activity for ${fetchedName} based on a  hobby...`);
+
+//   console.log(hobbyList) it used to just check data is come or not
+   setTimeout(()=>{
+   
+    const favoriteActivities = {
+            reading: 'Visiting libraries',
+            gaming: 'Playing online multiplayer',
+            painting: 'Attending art classes',
+            cycling: 'Riding through the park',
+            yoga: 'Attending yoga workshops',
+            cooking: 'Experimenting with new recipes',
+            'watching movies': 'Going to the cinema',
+            playing: 'Playing outdoor games'
+        };
+
+
+        if (hobbyList.length > 0) {
+            const randomHobby = hobbyList[Math.floor(Math.random()*hobbyList.length)]
+    // console.log(randomHobby);
+    
+    const activity= favoriteActivities[randomHobby] ||'No activity found for this hobby';
+    // console.log(activity);
+    fCallabck(randomHobby,activity)
+        } else {
+            callback(null, 'No hobbies available') 
+        }
+   
+
+
+   },1500)
+
+}
+
+
+// Callback Hell Example with Random Hobby
+getName('Sonam', (name) => {
+    console.log(`Name fetched: ${name}`);
+
+    getHobbies(name, (hobbyList) => {
+        console.log(`Hobbies for ${name}:`, hobbyList);
+
+        getFavoriteActivity(name, hobbyList, (randomHobby, activity) => {
+            if (randomHobby) {
+                console.log(`Selecting the hobbies....: ${randomHobby}`);
+                console.log(`Favorite activity for ${name} based on hobby (${randomHobby}): ${activity}`);
+            } else {
+                console.log(`No hobbies available for ${name}`);
+            }
+        });
+    });
+});
+
+
+
+
+// console.log("Before promise creation");
+// const myPromise = new Promise((resolve, reject) => {
+//   console.log("Executor starts running...");
+//   resolve("Done"); // Resolves the promise
+//   console.log("Executor finishes running...");
+// });
+
+// myPromise.then((value) => {
+//   console.log("Promise resolved with value:", value);
+// });
+
+// console.log("After promise creation");
+
+   </script> 
+
+
+<script>
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

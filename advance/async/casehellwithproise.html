@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+
+<script>
+//  let user = "sonam"
+//     const promise = getName(user)
+//  console.log(promise);
+ 
+    // creation 
+
+    function getName(user) {
+        const pr = new Promise((resolve)=>{
+            setTimeout(() => {
+        console.log("Fetching user name...");
+        resolve(user.charAt(0).toUpperCase() + user.slice(1)); // Pass the user to the callback
+    }, 2000);  
+        }) 
+    
+        return pr
+    }
+    
+// Step 2: Get Hobbies
+function getHobbies(fetchedName) {
+   
+    return new Promise((resolve)=>{
+        setTimeout(() => {
+        console.log(`Fetching hobbies for ${fetchedName}...`);
+
+        const hobbies = {
+            Sonam: ['reading', 'watching movies', 'playing'],
+            Raj: ['coding', 'gaming', 'cooking'],
+            Maya: ['painting', 'cycling', 'yoga']
+        };
+
+        resolve(hobbies[fetchedName] || []);
+
+    }, 1000);
+    })
+   
+}
+
+
+function getFavoriteActivity(fetchedName,hobbyList ) {
+    // Sonam: ['reading', 'watching movies', 'playing'],
+
+    console.log(`Fetching favorite activity for ${fetchedName} based on a  hobby...`);
+
+//   console.log(hobbyList) it used to just check data is come or not
+   return new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+   
+   const favoriteActivities = {
+           reading: 'Visiting libraries',
+           gaming: 'Playing online multiplayer',
+           painting: 'Attending art classes',
+           cycling: 'Riding through the park',
+           yoga: 'Attending yoga workshops',
+           cooking: 'Experimenting with new recipes',
+           'watching movies': 'Going to the cinema',
+           playing: 'Playing outdoor games'
+       };
+
+
+       if (hobbyList.length > 0) {
+           const randomHobby = hobbyList[Math.floor(Math.random()*hobbyList.length)]
+   // console.log(randomHobby);
+   
+   const activity= favoriteActivities[randomHobby] ||'No activity found for this hobby';
+   // console.log(activity);
+   resolve({randomHobby,activity})
+       }
+        else {
+           reject('No hobbies available') 
+       }
+  
+
+
+  },1500)
+
+   })
+
+}
+
+
+
+    getName("sonam").then((name)=>{
+       console.log(`User Name is fetched : ${name}`) 
+       return getHobbies(name)
+    }).then((hobbyList)=>{
+        console.log(`Hobbies for ${name}:`, hobbyList);
+        return getFavoriteActivity(name, hobbyList);
+        
+    }).then(({ randomHobby, activity }) => {
+        console.log(`Selected hobby: ${randomHobby}`);
+        console.log(`Favorite activity based on hobby (${randomHobby}): ${activity}`);
+    })
+    .catch((error) => {
+        console.log('Error:', error);
+    }).finally(() => {
+        console.log("completed.");
+    });
+    
+
+</script>
+
+</body>
+</html>
+

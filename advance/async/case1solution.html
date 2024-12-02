@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+       
+console.log("start"); 
+
+function getName(user, callabck) {
+    
+setTimeout(() => {
+   console.log("inside the user settimeout");
+    callabck(user);
+}, 
+2000)};
+  
+
+
+//add hobbies
+
+function getHobbies(callabck ) {
+ setTimeout(()=>{
+    console.log("inside the hoppbies settimeout");
+    callabck(['reading', 'watching movies', 'playing'])
+ },1000)
+    
+}
+
+
+getName('sonam', (nameValue)=>{ console.log(nameValue);
+
+  getHobbies((hobbies)=>{
+    console.log(hobbies)
+})
+
+
+});
+
+// getName('sonam', function(nameValue) {
+//   console.log(nameValue);
+// })
+
+
+
+
+console.log("End");
+
+
+
+
+
+    </script>
+</body>
+</html>

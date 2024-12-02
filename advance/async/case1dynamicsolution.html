@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+
+
+
+
+
+    // fetching User Name
+    function getName(user,callabck) {
+        setTimeout(()=>{
+            console.log("user data Name is fething....");
+           callabck(user)
+        },2000)
+        
+    }
+
+// Fetching hobbies
+
+function getHobbies(fetchedname, hCallback) {
+    setTimeout(()=>{
+      console.log(`Fetching hobbies for ${name}....`);
+
+      const hobbies = {
+            Sonam: ['reading', 'watching movies', 'playing'],
+            Raj: ['coding', 'gaming', 'cooking'],
+            Maya: ['painting', 'cycling', 'yoga']
+        };
+      hCallback(hobbies[fetchedname] || [])
+    }, 1000)
+}
+
+
+    getName('Sonam',(name)=>{
+         console.log(`name fetched: ${name}`);
+         getHobbies(name, (hobby)=>{
+            console.log(`Hobbies for ${name}`, hobby);
+            console.log(typeof hobby);
+            console.log(hobby)
+            
+         })
+    })
+   </script> 
+</body>
+</html>
