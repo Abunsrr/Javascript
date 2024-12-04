@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <p id="name"></p>
+
+
+    <script>
+        function getfacts(){
+ fetch('https://api.github.com/users/hiteshchoudhary')
+  .then(response => response.json())  // Convert the response to JSON
+  .then(data => {
+    console.log('User Data:', data);  // Log the user data received
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+        }
+getfacts()
+
+const URL = 'https://api.github.com/users/hiteshchoudhary'
+const userName = document.querySelector('#name');
+const getuser = async () => {
+    console.log("getting the user's details......");
+  let  response = await fetch(URL)
+  console.log(response);
+  let data = await response.json()
+  console.log(data.name);
+  userName.innerText = data.name
+  
+}
+
+
+
+    </script>
+</body>
+</html>

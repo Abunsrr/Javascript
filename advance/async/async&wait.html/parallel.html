@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    const p1 = new Promise((resolve) => setTimeout(resolve, 5000, "First Promise"));
+const p2 = new Promise((resolve) => setTimeout(resolve, 3000, "Second Promise"));
+
+async function parallelExample() {
+  console.time("Parallel Execution");
+  const result1 = await p1; // Resolves in 5 seconds
+  const result2 = await p2; // By this time, p2 is already resolved (3 seconds ago).
+  console.log(result1); // First Promise
+  console.log(result2); // Second Promise
+  console.timeEnd("Parallel Execution");
+}
+parallelExample();
+
+   </script> 
+</body>
+</html>

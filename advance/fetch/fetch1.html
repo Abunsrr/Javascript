@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+
+
+ 
+  const result = fetch('https://api.github.com/users/hiteshchoudhary');
+console.log(result); // Logs the Promise object (Promise { <pending> })
+
+result
+  .then(response => {
+    console.log(response); // Logs the Response object when resolved
+    console.log(response instanceof Response); // Logs true (since it's an instance of Response)
+    
+    if (response.ok) {
+      return response.json(); // If the response is okay, parse the JSON body
+    } else {
+      throw new Error('Failed to fetch');
+    }
+  })
+  .then(data => {
+    console.log(data); // Logs the actual data (parsed JSON object)
+  })
+  .catch(error => {
+    console.error(error); // Logs any error (like network failure)
+  });
+
+
+
+fetch('https://api.github.com/users/hiteshchoudhary', {
+  method: 'PATCH',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Add your token here
+  },
+  body: JSON.stringify({ name: 'Jane Doe' })
+})
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+
+   </script> 
+</body>
+</html>
