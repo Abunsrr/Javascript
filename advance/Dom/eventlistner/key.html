@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyboard Event</title>
+</head>
+<body style="font-family: cursive;">
+    <h1>keyboard Event </h1>
+ <input id="input"  type="text">
+
+    <script>
+        const h1=document.querySelector('h1')
+        const input=document.querySelector('#input')
+
+        // input.addEventListener('keypress', (e)=>{
+             
+        //     console.log(e);
+        //     console.log(e.key)
+            
+    
+        // })
+       
+
+        // window.addEventListener('keypress', (e)=>{
+        //      console.log( 'value '+  e.code);
+        //      console.log('code '+   e.key);
+        // })
+
+      
+
+        window.addEventListener('keydown', (e)=>{
+          
+             console.log( 'value '+  e.code);
+             console.log('code '+   e.key);
+             console.log('keydown end');
+             
+        })
+
+        window.addEventListener('keyup', (e)=>{
+             console.log( 'value '+  e.code);
+             console.log('code '+   e.key);
+             console.log('keydup end');
+        })
+
+
+    </script>
+</body>
+</html>

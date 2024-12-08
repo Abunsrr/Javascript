@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Hello World!</h1>
+<h1 id="heading2"><span>Hello</span> World!</h1>
+<div id="container"></div>
+
+
+<script>
+    // Get the elements
+const heading = document.getElementById("heading");
+const heading2 = document.getElementById("heading2");
+const container = document.getElementById("container");
+
+// Log the text content of the elements
+console.log("Example 1:");
+console.log(heading.innerText); // Output: "Hello World!"
+console.log(heading.textContent); // Output: "Hello World!"
+console.log(heading.innerHTML); // Output: "Hello World!"
+
+console.log("\nExample 2:");
+console.log(heading2.innerText); // Output: "Hello World!"
+console.log(heading2.textContent); // Output: "Hello World!"
+console.log(heading2.innerHTML); // Output: "<span>Hello</span> World!"
+
+// Append text to the container element
+console.log("\nAppend Example:");
+container.textContent = "This is some text.";
+console.log(container.textContent); // Output: "This is some text."
+
+// Append HTML to the container element
+container.innerHTML = "<p>This is some HTML.</p>";
+console.log(container.innerHTML); // Output: "<p>This is some HTML.</p>"
+
+// Append text to the container element using appendChild
+const textNode = document.createTextNode("This is some text.");
+container.appendChild(textNode);
+console.log(container.textContent); // Output: "This is some text.This is some text."
+
+// Clear the container element
+container.textContent = "";
+console.log(container.textContent); // Output: ""
+</script>
+</body>
+</html>

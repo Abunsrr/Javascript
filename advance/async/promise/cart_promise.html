@@ -17,22 +17,22 @@
             console.log(orderID);
             // return orderID
             return proceedToPayment(orderID);
-            
-      
-        })
+     })
+
         // .then((orderID)=>{
         //      proceedToPayment(orderID)  //this is promise again
         //      return proceedToPayment(orderID)
         //    }) // proceedToPayment(orderId)
-        .then((paymentInfo)=>{
-             console.log(paymentInfo)  //this is promise again 
+
+ .then((paymentInfo)=>{
+    console.log(paymentInfo)  //this is promise again 
            })    
-        .catch((err)=>{
-        console.log(err.message)
+    .catch((err)=>{
+    console.log(err.message)
         }).then(function (orderID) {
             console.log("No Matter what happens , I will definetely be called");
             
-        })
+  })
 
         // producer part or creation part
 
@@ -64,6 +64,8 @@
             resolve("payment success")
           })  
         }
+
+        
         function validateCart(cart){
             return true // but how to validate learn this
         }

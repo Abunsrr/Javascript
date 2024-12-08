@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation</title>
+</head>
+<body>
+  <div id="container">
+    <h1>Welcome to the DOM</h1>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <span>Footer Text</span>
+  </div>
+
+  <script>
+    // Select the container div
+const container = document.getElementById("container");
+
+// 1. `children` - Get all child elements
+console.log("Children of container:", container.children);
+// Output: HTMLCollection(5) [h1, p, p, ul, span]
+
+// 2. `firstElementChild` - Get the first child element
+const firstChild = container.firstElementChild;
+console.log("First child of container:", firstChild);
+// Output: <h1>Welcome to the DOM</h1>
+
+// 3. `lastElementChild` - Get the last child element
+const lastChild = container.lastElementChild;
+console.log("Last child of container:", lastChild);
+// Output: <span>Footer Text</span>
+
+// 4. `prepend` - Insert nodes at the beginning
+container.prepend("Prepended Text - "); // Inserts as a text node
+const newHeading = document.createElement("h2");
+newHeading.textContent = "Prepended Heading";
+container.prepend(newHeading); // Inserts the element
+console.log("After prepend:", container.innerHTML);
+// Output:
+// <h2>Prepended Heading</h2>
+// Prepended Text - 
+// <h1>Welcome to the DOM</h1>
+// <p>This is a paragraph.</p>
+// <p>This is another paragraph.</p>
+// <ul>...</ul>
+// <span>Footer Text</span>
+
+// 5. `append` - Insert nodes at the end
+container.append(" - Appended Text"); // Inserts as a text node
+const newFooter = document.createElement("footer");
+newFooter.textContent = "Appended Footer";
+container.append(newFooter); // Inserts the element
+console.log("After append:", container.innerHTML);
+// Output:
+// <h2>Prepended Heading</h2>
+// Prepended Text - 
+// <h1>Welcome to the DOM</h1>
+// <p>This is a paragraph.</p>
+// <p>This is another paragraph.</p>
+// <ul>...</ul>
+// <span>Footer Text</span>
+// - Appended Text
+// <footer>Appended Footer</footer>
+
+// 6. `replaceChildren` - Replace all child nodes
+const replacementDiv = document.createElement("div");
+replacementDiv.textContent = "All children replaced!";
+container.replaceChildren(replacementDiv);
+console.log("After replaceChildren:", container.innerHTML);
+// Output: <div>All children replaced!</div>
+
+// Reverting changes for the next examples
+container.innerHTML = `
+  <h1>Welcome to the DOM</h1>
+  <p>This is a paragraph.</p>
+  <p>This is another paragraph.</p>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+  <span>Footer Text</span>
+`;
+
+// 7. `querySelector` - Select the first matching element
+const firstParagraph = container.querySelector("p");
+console.log("First paragraph:", firstParagraph);
+// Output: <p>This is a paragraph.</p>
+
+// 8. `querySelectorAll` - Select all matching elements
+const allListItems = container.querySelectorAll("li");
+console.log("All list items:", allListItems);
+// Output: NodeList(3) [li, li, li]
+allListItems.forEach((li, index) => {
+  li.textContent += ` (Modified Item ${index + 1})`;
+});
+console.log("After modifying list items:", container.querySelector("ul").innerHTML);
+// Output:
+// <li>Item 1 (Modified Item 1)</li>
+// <li>Item 2 (Modified Item 2)</li>
+// <li>Item 3 (Modified Item 3)</li>
+
+// 9. `previousElementSibling` - Get the previous sibling element
+const secondParagraph = container.querySelectorAll("p")[1];
+console.log(
+  "Previous sibling of the second paragraph:",
+  secondParagraph.previousElementSibling
+);
+// Output: <p>This is a paragraph.</p>
+
+// 10. `nextElementSibling` - Get the next sibling element
+console.log(
+  "Next sibling of the first paragraph:",
+  firstParagraph.nextElementSibling
+);
+// Output: <p>This is another paragraph.</p>
+
+// Additional sibling examples
+const list = container.querySelector("ul");
+console.log("Previous sibling of list:", list.previousElementSibling);
+// Output: <p>This is another paragraph.</p>
+console.log("Next sibling of list:", list.nextElementSibling);
+// Output: <span>Footer Text</span>
+
+  </script>
+</body>
+</html>

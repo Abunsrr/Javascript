@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: blue;
+      font-size: 36px;
+    }
+    p {
+      color: #666;
+      font-size: 18px;
+    }
+    .container {
+      width: 80%;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hello World</h1>
+    <p>This is a paragraph.</p>
+    <button>Click me!</button>
+  </div>
+
+
+
+
+<script>
+  const domTree = {
+  nodeName: "HTML",
+  children: [
+    {
+      nodeName: "HEAD",
+      children: [
+        {
+          nodeName: "TITLE",
+          children: [
+            {
+              nodeName: "#text",
+              nodeValue: "Example"
+            }
+          ]
+        },
+        {
+          nodeName: "STYLE",
+          children: [
+            {
+              nodeName: "#text",
+              nodeValue: "CSS rules here..."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      nodeName: "BODY",
+      children: [
+        {
+          nodeName: "DIV",
+          attributes: {
+            class: "container"
+          },
+          children: [
+            {
+              nodeName: "H1",
+              children: [
+                {
+                  nodeName: "#text",
+                  nodeValue: "Hello World"
+                }
+              ]
+            },
+            {
+              nodeName: "P",
+              children: [
+                {
+                  nodeName: "#text",
+                  nodeValue: "This is a paragraph."
+                }
+              ]
+            },
+            {
+              nodeName: "BUTTON",
+              children: [
+                {
+                  nodeName: "#text",
+                  nodeValue: "Click me!"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+console.log(domTree);
+</script>
+
+  <p>
+    HTML
+├── HEAD
+│   ├── TITLE: "Example"
+│   └── STYLE: "CSS rules here..."
+└── BODY
+    └── DIV (class: container)
+        ├── H1: "Hello World"
+        ├── P: "This is a paragraph."
+        └── BUTTON: "Click me!"
+
+  </p>
+
+
+  <p>
+    The CSSOM tree represents the parsed CSS rules. Each rule is converted into an object, organized by selectors and their respective styles.
+
+CSSOM Tree Representation
+  </p>
+
+
+  <script>
+    const CSSOM= {
+  rules: [
+    {
+      selectorText: "body",
+      style: {
+        backgroundColor: "#f2f2f2",
+        fontFamily: "Arial, sans-serif"
+      }
+    },
+    {
+      selectorText: "h1",
+      style: {
+        color: "blue",
+        fontSize: "36px"
+      }
+    },
+    {
+      selectorText: "p",
+      style: {
+        color: "#666",
+        fontSize: "18px"
+      }
+    },
+    {
+      selectorText: ".container",
+      style: {
+        width: "80%",
+        margin: "40px auto",
+        padding: "20px",
+        backgroundColor: "#fff",
+        border: "1px solid #ddd",
+        boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)"
+      }
+    }
+  ]
+}
+
+  </script>
+
+  <p>
+    Hierarchy Visualization:
+    CSSStyleSheet
+├── Rule: body { background-color: #f2f2f2; font-family: Arial, sans-serif; }
+├── Rule: h1 { color: blue; font-size: 36px; }
+├── Rule: p { color: #666; font-size: 18px; }
+└── Rule: .container { width: 80%; margin: 40px auto; ... }
+
+  </p>
+
+
+  <!-- render tree -->
+
+  <p> Render Tree
+    The Render tree is a combination of DOM and CSSOM. It contains only the elements that will be visually displayed on the screen, with their computed styles.
+    
+    Render Tree Representation</p>
+    <script>
+        {
+  elements: [
+    {
+      type: "body",
+      styles: {
+        backgroundColor: "#f2f2f2",
+        fontFamily: "Arial, sans-serif"
+      }
+    },
+    {
+      type: "div",
+      styles: {
+        width: "80%",
+        margin: "40px auto",
+        padding: "20px",
+        backgroundColor: "#fff",
+        border: "1px solid #ddd",
+        boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)"
+      },
+      children: [
+        {
+          type: "h1",
+          styles: {
+            color: "blue",
+            fontSize: "36px"
+          },
+          content: "Hello World"
+        },
+        {
+          type: "p",
+          styles: {
+            color: "#666",
+            fontSize: "18px"
+          },
+          content: "This is a paragraph."
+        },
+        {
+          type: "button",
+          styles: {
+            // Default styles (computed based on the browser)
+          },
+          content: "Click me!"
+        }
+      ]
+    }
+  ]
+}
+
+    </script>
+
+    <p>
+        Hierarchy Visualization:
+Render Tree
+├── BODY (background-color: #f2f2f2; font-family: Arial, sans-serif)
+    └── DIV (width: 80%; margin: 40px auto; ...)
+        ├── H1 (color: blue; font-size: 36px): "Hello World"
+        ├── P (color: #666; font-size: 18px): "This is a paragraph."
+        └── BUTTON: "Click me!"
+    </p>
+</body>
+</html>

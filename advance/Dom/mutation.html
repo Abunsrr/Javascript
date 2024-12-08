@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+      
+      <script>
+//         const list = document.getElementById('list');
+// const items = list.children;
+// console.log(items);
+
+
+// for (let i = 0; i < items.length; i++) {
+//   list.removeChild(items[i]);
+
+
+const list = document.getElementById('list');
+const items = list.children; // Live HTMLCollection
+const initialLength = items.length; // Capture the initial length
+
+for (let i = 0; i < initialLength; i++) {
+  const newItem = document.createElement('li');
+  newItem.textContent = `New Item ${i}`;
+  list.appendChild(newItem); // Mutation occurs here
+}
+
+
+
+
+      </script>
+
+
+
+  
+</body>
+</html>

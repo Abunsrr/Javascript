@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color:white
+        }
+        h1{
+            display: block;
+            font-size: 2em;
+            margin-block-start: .67em;
+            background-color: rgb(35, 62, 53);
+        }
+        .container{
+    
+            color: green;
+           display: flex; 
+            flex-wrap: wrap; 
+            gap: 8px;
+            
+        }
+
+        .addCard{
+             cursor: pointer;   
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50% !important;
+  background-color: lightblue !important;
+  height: 100px !important;
+  margin-right: 10px !important;
+  width: 100px !important;
+       
+        }
+
+        .cardBox{
+            
+            width: 100px;
+            height: 120px;
+            background-color: pink;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            font-size: 36px;
+            margin-bottom: 10px;
+            
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <h1>Adding Event listener</h1>
+    <div class="container">
+        <div draggable="true" class="cardBox addCard">+</div>
+    </div>
+
+    <script>
+    //     function user(){
+    //         console.log(`my name is nasar`)
+    //     }
+
+    //    let h1=  document.querySelector('h1')
+
+    //  h1.addEventListener('click',()=>{
+    //     console.log('hiiiiiiii');  
+    //  })
+
+    //  h1.addEventListener('click', user)
+
+
+//     let container = document.querySelector('.container')
+// let card = document.querySelector('.cardBox')
+
+//     function createCard(i) {
+       
+//  let cloneCard = card.cloneNode(true);
+//   cloneCard.innerText=`${i}`
+//  container.appendChild(cloneCard)
+//     }
+ 
+//    card.addEventListener('click',()=>{
+//         for (let i = 0; i < 10; i++) {
+//             setTimeout(()=>{
+//                 createCard(i)
+//             },1000)
+            
+//         }
+//     })
+
+
+// with wait of 1sec
+// let container = document.querySelector('.container')
+//  let card = document.querySelector('.cardBox')
+// let Count = 1
+
+//     function createCard() {
+//   let cloneCard = card.cloneNode(true);
+//   cloneCard.classList.remove('addCard')
+//   cloneCard.innerText = Count
+//   Count++
+//   container.appendChild(cloneCard)
+//   console.log(Count)
+// }
+
+
+// card.addEventListener('click', async () => {
+//   console.log('Card clicked!')
+
+//   for (let i = 1; i <= 10; i++) {
+//     await new Promise(resolve => setTimeout(resolve, 500));
+//     createCard()
+//   }
+// })
+
+
+
+// now with create 
+
+// let container = document.querySelector('.container')
+//  let card = document.querySelector('.cardBox')
+//  let count=1;
+ 
+//         card.addEventListener('mouseout',()=>{
+//         let createdCard=document.createElement('div')
+//         createdCard.classList.add('cardBox')
+//         createdCard.innerText=count++
+//         container.appendChild(createdCard)
+//         console.log(count)
+//  })
+
+
+
+let container = document.querySelector('.container')
+ let card = document.querySelector('.cardBox')
+ let count=1;
+ 
+//         card.addEventListener('mousemove',()=>{
+//         let createdCard=document.createElement('div')
+//         createdCard.classList.add('cardBox')
+//         createdCard.innerText=count++
+//         container.appendChild(createdCard)
+//         console.log(count)
+//  })
+
+
+ 
+//      document.addEventListener('scroll',()=>{
+//         let createdCard=document.createElement('div')
+//         createdCard.classList.add('cardBox')
+//         createdCard.innerText=count++
+//         container.appendChild(createdCard)
+//         console.log(count)
+//  })
+
+
+// touch event 
+//  card.addEventListener('touchstart',()=>{
+//         let createdCard=document.createElement('div')
+//         createdCard.classList.add('cardBox')
+//         createdCard.innerText=count++
+//         container.appendChild(createdCard)
+//         console.log(count)
+//  })
+
+//  card.addEventListener('touchmove',()=>{
+//         let createdCard=document.createElement('div')
+//         createdCard.classList.add('cardBox')
+//         createdCard.innerText=count++
+//         container.appendChild(createdCard)
+//         console.log(count)
+//  })
+
+ card.addEventListener('dragstart',()=>{
+        let createdCard=document.createElement('div')
+        createdCard.classList.add('cardBox')
+        createdCard.innerText=count++
+        container.appendChild(createdCard)
+        console.log(count)
+ })
+
+ 
+    </script>
+
+</body>
+</html>

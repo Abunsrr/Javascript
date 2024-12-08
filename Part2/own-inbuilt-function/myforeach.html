@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      
+      Array.prototype.customForEach=function(callback, thisArg){
+  
+        // validate array
+        if(this == null){
+    throw new TypeError('Array is null or undefined')
+}
+
+// validate callback
+ if (typeof callback !== 'function') {
+    throw new TypeError(`${callback} is not a function`);
+  }
+
+ // Ensure the first argument is an array-like object
+
+ if(typeof this[Symbol.iterator] !== "function" && typeof this.length !=='number'){
+    throw new TypeError(`First argument must be an array or array-like object`);
+ }
+  
+  const arr = Array.from(this);
+     
+  for (let i = 0; i < this.length; i++) {
+        // Call the callback with the specified context (thisArg)
+        // Pass three arguments: current element, current index, and the original array
+        callback.call(
+            thisArg,// Context (this value)
+            arr[i],       // Current element
+            i,            // Current index
+            arr           // Original array
+        ); 
+    }
+}
+  
+let number =[2,3,5]
+function count(value, index, array) {
+   console.log(value)
+}
+
+number.customForEach(count)
+
+// Example 3: Using thisArg
+const obj = {
+    prefix: "I love ",
+    printName: function(fruit) {
+        console.log(this.prefix + fruit);
+    }
+};
+
+
+const numbers = [1, 2, 3];
+numbers.customForEach(obj.printName, obj);
+
+console.log("Are they the same?", 
+    number.forEach(item => item) === 
+    number.customForEach(item => item)
+);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color:white
+        }
+        h1{
+            display: block;
+            font-size: 2em;
+            margin-block-start: .67em;
+            background-color: rgb(35, 62, 53);
+        }
+        .container{
+    
+            color: green;
+           display: flex; 
+            flex-wrap: wrap; 
+            gap: 8px;
+            
+        }
+
+        .addCard{
+             cursor: pointer;   
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50% !important;
+  background-color: lightblue !important;
+  height: 100px !important;
+  margin-right: 10px !important;
+  width: 100px !important;
+       
+        }
+
+        .cardBox{
+            
+            width: 100px;
+            height: 120px;
+            background-color: pink;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            font-size: 36px;
+            margin-bottom: 10px;
+            
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <h1>Adding Event listener</h1>
+    <div class="container">
+        <div class="cardBox addCard">+</div>
+    </div>
+
+    <script>
+let container = document.querySelector('.container');
+let card = document.querySelector('.cardBox');
+
+let count = 1;
+
+// Adding new cards
+container.addEventListener('click', (e) => {
+    if (e.target.classList.contains('addCard')) {
+        let cloneCard = card.cloneNode(true);
+        cloneCard.innerText = count++;
+        cloneCard.classList.remove('addCard');
+        container.appendChild(cloneCard);
+    }
+});
+
+// Removing cards
+container.addEventListener('click', (e) => {
+    if (e.target !== container && !e.target.classList.contains('addCard')) {
+        e.target.remove();
+    }
+});
+
+
+ 
+
+
+
+ 
+    </script>
+
+</body>
+</html>

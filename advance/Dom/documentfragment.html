@@ -1,0 +1,42 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DocumentFragment Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    div {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>DocumentFragment Example</h1>
+  <button id="add-items-btn">Add Items</button>
+  <div id="items-container"></div>
+
+  <script>
+    const fragment = document.createDocumentFragment();
+    const itemsContainer = document.getElementById('items-container');
+    const addItemsBtn = document.getElementById('add-items-btn');
+
+    addItemsBtn.addEventListener('click', addItem);
+
+    function addItem() {
+      for (let i = 0; i < 10; i++) {
+        const div = document.createElement('div');
+        div.textContent = `Item ${i}`;
+        fragment.appendChild(div);
+      }
+      itemsContainer.appendChild(fragment);
+    }
+
+    // location.href='https://infogex.com/'
+  </script>
+</body>
+</html>

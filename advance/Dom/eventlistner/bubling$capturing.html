@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Bubbling and Capturing</title>
+    <style>
+        div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.green {
+    width: 400px;
+    height: 300px;
+    background-color: green;
+}
+
+.pink {
+    width: 300px;
+    height: 200px;
+    background-color: hotpink;
+}
+
+.blue {
+    width: 200px;
+    height: 100px;
+    background-color: skyblue;
+}
+    </style>
+  </head>
+  <body style="font-family: cursive">
+    <h1>Event Bubbling and Capturing</h1>
+
+    <div class="green">
+      <div class="pink">
+        <div class="blue"></div>
+      </div>
+    </div>
+
+    <script>
+
+const green = document.querySelector('.green')
+const pink = document.querySelector('.pink')
+const blue = document.querySelector('.blue')
+ 
+document.addEventListener('click',()=>{
+        console.log('5.Documuent event listner');
+     
+        
+    })
+document.body.addEventListener('click',()=>{
+        console.log('4.Documuent event listner');
+        
+    })
+
+ green.addEventListener('click',()=>{
+        console.log('3.green event listner')
+    })
+
+    
+ pink.addEventListener('click',()=>{
+        console.log('2.pink event listner');
+        
+    })
+ blue.addEventListener('click',()=>{
+        console.log('1.blue event listner');
+    })
+        
+    
+    </script>
+  </body>
+</html>
