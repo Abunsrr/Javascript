@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Local storage</title>
+</head>
+<body style="font-family: cursive;">
+    
+    <h1>Local storage</h1>
+    <input type="text" class="name">
+    <input type="number" class="age">
+    <h2>My Name is <span class="name-tag"></span></h2>
+    <h3>I am age <span class="age-tag"></span> years old</h3>
+
+    <script>
+        
+// e.target.value  same sa nameInput.value
+
+// but thisi is not good way
+        let nameElement = document.querySelector(".name-tag")
+        let ageElement = document.querySelector(".age-tag")
+        let nameInput= document.querySelector('.name')
+        let ageInput= document.querySelector('.age')
+    //      nameElement.innerText=localStorage.myName
+    //    nameInput.addEventListener('input',(e)=>{
+    //     console.log(nameInput.value);
+    //     localStorage.myName = e.target.value
+    //     innerText=nameInput.value
+    //    })
+
+    // nameElement.innerText=localStorage.getItem('myName')
+    //    nameInput.addEventListener('input',(e)=>{
+    //     console.log(nameInput.value);
+    //     localStorage.setItem('myName',e.target.value)
+    //     nameElement.innerText=localStorage.getItem('myName')
+    //    })
+
+       
+    // ageElement.innerText=localStorage.getItem('myAge')
+    //    ageInput.addEventListener('input',(e)=>{
+    //     console.log(ageInput.value);
+    //     localStorage.setItem('myAge',e.target.value)
+    //     ageElement.innerText=localStorage.getItem('myAge')
+    //    })
+
+    const myData=JSON.parse(localStorage.getItem('Data')) || {}
+
+    nameInput.addEventListener('input',(e)=>{
+          myData.name=e.target.value
+          localStorage.setItem('Data', JSON.stringify(myData))
+          
+     nameElement.innerText= e.target.value
+          
+    })
+    
+
+    ageInput.addEventListener('input',(e)=>{
+          myData.age=e.target.value
+          localStorage.setItem('Data', JSON.stringify(myData))
+          ageElement.innerText= e.target.value
+
+    })
+
+    // finally fetch the data from local storage 
+//   if(myData.name){
+//     nameElement.innerText=myData.name
+//   }
+//   if(myData.age){
+//     ageElement.innerText=myData.age
+//   }
+
+
+nameElement.innerText = myData.name || '';
+ageElement.innerText = myData.age || '';
+    </script>
+</body>
+
+</html>
